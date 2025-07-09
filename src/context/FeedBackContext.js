@@ -8,7 +8,7 @@ export const FeedbackProvider = ({ children }) => {
 
   const showMessage = (text) => {
     setMessage(text);
-    setTimeout(() => setMessage(null), 2000); // Hide after 2 seconds
+    setTimeout(() => setMessage(null), 2000);
   };
 
   return (
