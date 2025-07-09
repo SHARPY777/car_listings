@@ -89,7 +89,6 @@ export default function EditPage() {
       required
     />
 
-    {/* Row: Brand + Location */}
     <div className="grid grid-cols-2 gap-4 mb-4">
       <div>
         <label className="block mb-1 font-semibold">Brand</label>
@@ -115,7 +114,6 @@ export default function EditPage() {
       </div>
     </div>
 
-    {/* Row: Model + Year */}
     <div className="grid grid-cols-2 gap-4 mb-4">
       <div>
         <label className="block mb-1 font-semibold">Model</label>
@@ -141,7 +139,6 @@ export default function EditPage() {
       </div>
     </div>
 
-    {/* Row: Price */}
     <div className="mb-6">
       <label className="block mb-1 font-semibold">Price ($)</label>
       <input
@@ -154,7 +151,6 @@ export default function EditPage() {
       />
     </div>
 
-    {/* Buttons */}
     <button
       type="submit"
       className="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded text-white font-semibold mb-4"
