@@ -1,14 +1,17 @@
 'use client';
+export const dynamic = 'force-dynamic';
+
 import { useState, useEffect } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useFeedback } from '@/context/FeedBackContext';
 import axios from 'axios';
 
 export default function EditPage() {
   const router = useRouter();
-  const { id } = useParams();
+  const { query } = useRouter();
+  const id = query.id;
   const { showMessage } = useFeedback();
-
   const [listing, setListing] = useState(null);
   const [newTitle, setNewTitle] = useState('');
   const [brand, setBrand] = useState('');
