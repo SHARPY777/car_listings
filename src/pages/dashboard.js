@@ -26,18 +26,26 @@ export default function Dashboard({ listings }) {
           <FaCarSide className="text-3xl text-orange-400" />
           CarOneX Admin Dashboard
         </h1>
+        <div className='flex gap-x-4 flex-row'>
+        <button
+        onClick={() => router.push('/audit')}
+        className="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded text-white font-semibold"
+      >
+        Audit
+      </button>
         <button
           onClick={logout}
           className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded font-medium transition"
         >
           Logout
         </button>
+        </div>
       </div>
 
       <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl">
         <ListingTable initialListings={listings} />
       </div>
-
+     
       <FeedbackToast />
     </div>
   );

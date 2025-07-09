@@ -2,12 +2,13 @@
 export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
 import { useRouter } from 'next/router';
 import { useFeedback } from '@/context/FeedBackContext';
 import axios from 'axios';
+import { useAuth } from '@/context/AuthContext';
 
 export default function EditPage() {
+  const { user } = useAuth();
   const router = useRouter();
   const { query } = useRouter();
   const id = query.id;
@@ -59,6 +60,7 @@ export default function EditPage() {
         year,
         price,
         location,
+        performedBy: user?.email || 'admin',
       });
       showMessage('Listing updated successfully');
       router.push('/dashboard');
